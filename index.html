@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For Someone Special 💖</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      margin-top: 100px;
+      background-color: #ffe6e6;
+    }
+
+    h1 {
+      color: #ff4d6d;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      margin: 20px;
+      cursor: pointer;
+      border: none;
+      border-radius: 10px;
+    }
+
+    #yesBtn {
+      background-color: #28a745;
+      color: white;
+    }
+
+    #noBtn {
+      background-color: #dc3545;
+      color: white;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 id="question">Kya tum mere saath ghumne chalogi? 💕</h1>
+
+  <button id="yesBtn" onclick="nextStep()">Yes 💖</button>
+  <button id="noBtn">No 😢</button>
+
+  <script>
+    let step = 1;
+
+    const noBtn = document.getElementById("noBtn");
+    const question = document.getElementById("question");
+
+    // No button bhaag jayega 😆
+    noBtn.addEventListener("mouseover", () => {
+      const x = Math.random() * window.innerWidth;
+      const y = Math.random() * window.innerHeight;
+
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
+    });
+
+    function nextStep() {
+      step++;
+
+      if (step === 2) {
+        question.innerText = "Main tumhe pani puri khilane le jaunga 😋 Chalogi? 💕";
+      } 
+      else if (step === 3) {
+        question.innerText = "Chalo tumhare favourite place pe ghumne chalte hain 😍💖";
+      } 
+      else {
+        question.innerText = "Yayyyy!!! ❤️ thanks 😍";
+        document.getElementById("yesBtn").style.display = "none";
+        noBtn.style.display = "none";
+      }
+    }
+  </script>
+
+</body>
+</html>
